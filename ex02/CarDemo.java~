@@ -1,0 +1,8 @@
+import jeliot.io.*;
+
+public class CarDemo {
+    public static void main() {
+        // Your algorithm goes here.
+
+    }
+}

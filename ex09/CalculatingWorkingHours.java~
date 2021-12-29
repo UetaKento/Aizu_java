@@ -1,0 +1,31 @@
+//import jeliot.io.*;
+import java.util.Random;
+
+public class CalculatingWorkingHours {
+    public static void main() {
+        // Your algorithm goes here.
+	Employee[] e; 
+	Random rand = new Random(); 
+	e = new Employee[rand.nextInt(500)]; 
+	for(int i = 0; i< e.length; i++) { 
+	    switch (rand.nextInt(4)) {
+	    case 0: 
+		e[i] = new Regular(); 
+		break; 
+	    case 1: 
+		e[i] = new PartTime(); 
+		break; 
+	    case 2: 
+		e[i] = new Engineer(); 
+		break; 
+	    case 3: 
+		e[i] = new Manager();
+		break; 
+	    }
+	}
+	for(int i=0;i<e.length;i++){
+	    e[i].generateNumberHours();
+	    System.out.pritln(e[i].getDayPayment());
+	}
+    }
+}

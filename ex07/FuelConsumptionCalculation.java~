@@ -1,0 +1,104 @@
+//import jeliot.io.*;
+
+class SimpleCar{
+    float TTBW;
+    float TTFW;
+    float TNOKTBAC;
+    float TNOHTWP;
+    //String M=Nissan;
+    float FE;
+    float ACFE;
+    
+    SimpleCar(float a,float b,float c,float d){
+	this.TTBW=a;
+	this.TTFW=b;
+	this.TNOKTBAC=c;
+	this.TNOHTWP=d;
+	this.FE=13.0f;
+	this.ACFE=0.0f;
+    }
+    float calculateFuelConsumptionOldRegulations(){
+	if(this.ACFE==0.0f){
+	    return this.TNOKTBAC/this.FE+0;
+	}else{
+	    return this.TNOKTBAC/this.FE+this.TNOHTWP/this.ACFE;
+	}
+    }
+    float calculateFuelConsumptionNewRegulations(){
+	if(this.ACFE==0.0f){
+	    return this.TNOKTBAC/this.FE+0;
+	}else{
+	    return this.TNOKTBAC/this.FE+this.TNOHTWP/this.ACFE;
+	}
+    }
+}
+
+class AdvancedCar extends SimpleCar{
+    //String M=Toyota;
+    AdvancedCar(float a,float b,float c,float d){
+	super(a,b,c,d);
+	super.FE=15.5f;
+	super.ACFE=9.5f;
+    }
+    /*
+      float calculateFuelConsumptionOldRegulations（）{
+
+      }
+   
+    float calculateFuelConsumptionNewRegulations(){
+	return this.TNOKTBAC/this.FE+this.TNOHTWP*this.ACFE;
+      }
+    float calculateFuelConsumptionOldRegulations(float a,float b){
+	this.FE=a;
+	this.ACFE=b;
+	return this.TNOKTBAC/this.FE+(this.TTFW-this.TTBW)/this.ACFE;
+    }
+    float calculateFuelConsumptionNewRegulations(float a,float b){
+	this.FE=a;
+	this.ACFE=b;
+	return this.TNOKTBAC/this.FE+this.TNOHTWP/this.ACFE;
+    }
+    */
+}
+/*
+class DeluxeCar extends AdvancedCar{
+    float calculateFuelConsumptionOldRegulations(){
+
+    }
+    float calculateFuelConsumptionNewRegulations(){
+
+    }
+}
+*/
+
+
+public class  FuelConsumptionCalculation {
+    /*
+    private double fuelConsumptionOldRegulation = 0;
+    private double fuelConsumptionNewRegulation = 0;
+    private SimpleCar[] cars;
+
+    FuelConsumptionCalculation(){
+
+    } 
+    FuelConsumptionCalculation(SimpleCar[] cars){
+
+    } 
+    private void calculateFuelConsumption(){
+
+    } 
+    float getFuelConsumptionOldRegulations(){
+
+    }
+    float getFuelConsumptionNewRegulations(){
+
+    }
+    */
+    public static void main(String[] args) {
+        // Your algorithm goes here.
+	SimpleCar s=new SimpleCar(7.0f,18.0f,200.0f,8.0f);
+	AdvancedCar a=new AdvancedCar(7.0f,18.0f,200.0f,8.0f);
+	System.out.println(s.calculateFuelConsumptionOldRegulations());
+	System.out.println(a.calculateFuelConsumptionOldRegulations());
+    }
+}

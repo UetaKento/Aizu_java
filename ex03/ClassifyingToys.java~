@@ -1,0 +1,32 @@
+//import jeliot.io.*;
+
+public class ClassifyingToys {
+    public static string hantei(double x,doubnle y,double z){
+	string ans;
+	if(x*x+y*y>z*z){
+	    return ans="acute-angled";
+	}else if(x*x+y*y<z*z){
+	    return ans="obtuse-angled";
+	}else{
+	    return ans="right-angled";
+	}
+    }
+    public static void main(String[] args) {
+        // Your algorithm goes here.
+	string A;
+	A=hantei(0.3,0.4,0.5);
+	System.out.println("0.3,0.4,0.5 "+A);
+	A=hantei(2,3,4);
+	System.out.println("2,3,4 "+A);
+	A=hantei(5,12,13);
+	System.out.println("5,12,13 "+A);
+	A=hantei(19.0,19.0,19.0);
+	System.out.println("19.0,19.0,19.0 "+A);
+	A=hantei(6,7,11);
+	System.out.println("6,7,11 "+A);
+	A=hantei(11,13,17);
+	System.out.println("11,13,17 "+A);
+	A=hantei(7,24,25);
+	System.out.println("7,24,25 "+A);
+    }
+}

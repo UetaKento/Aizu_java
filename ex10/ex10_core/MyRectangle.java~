@@ -1,0 +1,9 @@
+//import jeliot.io.*;
+
+public class MyRectangle {
+    public int getPerimeter(){
+    }
+    int isLargerThan(){
+
+    }
+}

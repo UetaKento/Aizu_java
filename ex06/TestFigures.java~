@@ -1,0 +1,117 @@
+//import jeliot.io.*;
+
+class Shape {
+    private String name;
+    public Shape(String name) { 
+	this.name = name;
+    }
+    public Shape() {
+	name = "no name";
+    }
+    public String getName() {
+	return name;
+    }
+    public String toString() {
+	return getClass().getName() + " " + name;
+    }
+}
+class Circle extends Shape {
+    String name;
+    int hankei;
+    public Circle(String name,int x){
+	super(name);
+	this.hankei=x;
+    }
+    public String toString() {
+	return getClass().getName() + " " + name + " " + this.hankei;
+    }
+    public int calcmawari(){
+	int x;
+	return x=2*Math.PI*this.hankei;
+	//System.out.println("周囲 "+x);
+    }
+    public int calcmenseki(){
+	int x;
+	return x=this.hankei*this.hankei*Math.PI;
+    }
+}
+
+class Rectangle extends Shape {
+    String name;
+    int rinhen1,rinhen2;
+    public Rectangle(String name,int x,int y){
+	this.name=name;
+	this.rinhen1=x;
+	this.rinhen2=y;	
+    }
+    public String toString() {
+	return getClass().getName() + " " + this.name + " " + this.rinhen1 + " " + this.rinhen2;
+    }
+    public int calcmawari(){
+	int x;
+	return x=2*this.rinhen1+2*this.rinhen2;
+    }
+    public int calcmenseki(){
+	int x;
+	return x=this.rinhen1*this.rinhen2;
+    }
+
+}
+
+class Square extends Rectangle {
+    String name;
+    int hen;
+    public Square(String name,int x){
+	this.name=name;
+	this.hen=x;
+    }
+    public String toString() {
+	return getClass().getName() + " " + this.name + " " + this.hen;
+    }
+    public int calcmawari(){
+	int x;
+	return x=4*this.hen;
+    }
+    public int calcmenseki(){
+	int x;
+	return x=this.hen*this.hen;
+    }
+}
+
+class Parallelogram extends Rectangle {
+    String name;
+    int rinhen1,rinhen2,taikaku; 
+    public Rectangle(String name,int x,int y,int z){
+	this.name=name;
+	this.rinhen1=x;
+	this.rinhen2=y;
+	this,taikaku=z;
+    }
+    public String toString() {
+	return getClass().getName() + " " + this.name + " " + this.rinhen1 + " " + this.rinhen2+ " " + this.taikaku;
+    }
+    public int calcmawari(){
+	int x;
+	return x=2*this.rinhen1+2*this.rinhen2;
+    }
+    public int calcmenseki(){
+	int x;
+	return x=this.rinhen1*this.rinhen2;
+    }
+}
+
+class Rhombus extends Square {
+
+}
+
+public class TestFigures {
+    public static void main(String[] args) {
+        // Your algorithm goes here.
+	Rectangle r1=new Rectangle("Rectangle",5);
+	System.out.println(r1.toString());
+	//System.out.println("周囲 "+r1.calcmawari());
+	Square s1=new Square("Square",7);
+	System.out.println(s1.toString());
+	//System.out.println("周囲 "+s1.calcmawari());
+    }
+}
